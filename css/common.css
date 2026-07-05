@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+/* ===================================================
+   1. 全体のベース設定（グレースケール基調・行間等なし）
+   =================================================== */
+css {
+	margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #32523B; /* 背景：非常に薄いグレー */
+    color: #333333;            /* 文字：濃いグレー */
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, sans-serif;
+    background-image: url(../images/haru.jpg), -webkit-linear-gradient(270deg,rgba(39,84,33,1.00) 0%,rgba(68,132,136,1.00) 49.12%,rgba(228,183,102,1.00) 100%);
+    background-image: url(../images/haru.jpg), -moz-linear-gradient(270deg,rgba(39,84,33,1.00) 0%,rgba(68,132,136,1.00) 49.12%,rgba(228,183,102,1.00) 100%);
+    background-image: url(../images/haru.jpg), -o-linear-gradient(270deg,rgba(39,84,33,1.00) 0%,rgba(68,132,136,1.00) 49.12%,rgba(228,183,102,1.00) 100%);
+    background-image: url(../images/haru.jpg), linear-gradient(180deg,rgba(39,84,33,1.00) 0%,rgba(68,132,136,1.00) 49.12%,rgba(228,183,102,1.00) 100.00%);
+    background-position: -157% 45%;
+}
+
+
+/* 見出し2（h2）のデザイン */
+h2 {
+    font-size: 30px;
+    color: #222222;
+    padding-left: 12px;
+    border-left: 5px solid #444444;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 8px;
+    margin-top: 0;
+    text-shadow: 0px 0px 5px #F7D7D8;
+    background-color: #FFFFFF;
+}
+p .external-links {
+    height: 117px;
+}
+
+.interest-card ol {
+    /* [disabled]height: 0px; */
+    margin-top: 20px;
+    padding-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+/* ===================================================
+   2. ヘッダーのデザイン（左右中央揃え）
+   =================================================== */
+header {
+    /* [disabled]background-color: #B8E3BF; */ /* 漆黒に近いダークグレー */
+    color: #ffffff;
+    text-align: center;
+    /* 【修正】左右にpadding: 20pxがあるため、widthは 1000 - 40 = 960px に修正 */
+    width: 960px; /* アクセントのミディアムグレー線 */
+    margin: 0 auto; /* 画面中央に配置 */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-shadow: 0px 0px 14px #FFB100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* ===================================================
+   3. メインレイアウト（全体幅 1000px に固定・左右中央揃え）
+   =================================================== */
+main {
+    width: 1000px;             /* 横幅を1000pxに固定 */
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: -26px;         /* 上下に40pxの余白、左右オートで中央寄せ */
+    padding-bottom: 24px;
+}
+
+/* 各セクションを白い「カード型」にする共通設定 */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;    /* box-sizing、border-radius なし */
+    border-radius: 20px;
+}
+
+/* 【修正】箱（200px）からはみ出さないよう、画像幅を100%に変更 */
+.profile-image-box img {
+    width: 100%;
+    height: auto;
+    margin-top: -43px;
+}
+.left-column {
+    padding-bottom: 0;
+}
+
+
+h3 {
+    font-size: 20px;
+    color: #324123;
+    margin-top: 0;
+    background-color: #FFFDE1;
+}
+
+/* ===================================================
+   4. プロフィール部分（1カラム・横並び）
+   =================================================== */
+.profile-flex-container {
+    display: flex;  /* 画像とテキストを横並びにする */
+	align-items: flex-start;
+    margin-bottom: -37px;
+}
+
+.profile-image-box {
+    width: 219px;              /* 箱の幅を200pxに固定 */
+    margin-right: 30px;        /* 右側に30pxの隙間 */
+    -webkit-box-shadow: 0px 0px #640709;
+    box-shadow: 0px 0px #640709;
+    padding-left: 11px;
+}
+.profile-card {
+    padding: 20px;
+}
+
+
+.profile-text-box {
+    padding: 20px;
+    /* 【修正】sectionの内側padding(左右計60px)があるため、有効幅は940px。 */
+    /* そこから 画像(200px) + 右余白(30px) を引いた「710px」に修正 */
+    width: 710px;
+    margin-bottom: 40px;
+    margin-top: -39px;
+}
+.left-column .hobby-card ul {
+    margin-top: 33px;
+    margin-bottom: 0px;
+}
+
+
+/* ===================================================
+   5. 2カラムレイアウトの設定（パターンB）
+   =================================================== */
+.columns-container {
+    display: flex;   /* 【追加】左右の高さが違っても、箱を縦に無理やり引き伸ばさない指示 */
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+/* 左カラム（幅の設定） */
+.left-column {
+    width: 670px;
+	margin-right: 30px;
+}
+
+/* 右カラム（幅の設定） */
+.right-column {
+    width: 300px;              
+}
+
+.goals-card{
+    width: 300px;
+}
+
+/* ===================================================
+   5.5 趣味の画像設定（追加部分）
+   =================================================== */
+.hobby-img {
+    width: 74%;               /* 白いカードの内幅（568px）に対して100%ぴったりに広げる指示 */
+    height: auto;              /* 縦横比を崩さない設定 */
+    border: 1px solid #dddddd; /* 画像の周りに薄いグレーの枠線を引く */
+    margin-top: -11px;
+    margin-bottom: 15px;
+    padding-bottom: 0px;
+    margin-left: 65px;
+}
+.interest-card ol li {
+    margin-bottom: 20px;
+    margin-left: -40px;
+}
+
+
+.profile-text-box p {
+    font-size: 20px;
+    line-height:1.4;
+	margin: 8px 0;
+}
+
+.profile-text-box li {
+    line-height: 1.4;
+    margin-top: 20px;
+	height: auto
+}
+
+
+
+
+.external-links {
+    margin-top: 25px;
+    padding-top: 28px;
+    padding-right: 28px;
+    padding-left: 28px;
+    padding-bottom: 28px;
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+}
+
+/* リンクを並べたときに上下がくっつかないよう、pタグの上下マージンを調整 */
+.external-links p {
+    margin: 8px 0;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #002CFF;
+    opacity: 1;
+    text-decoration: none;
+}
+/* ===================================================
+   7. フッターのデザイン（左右中央揃え）
+   =================================================== */
+footer {
+    /* [disabled]background-color: #5A862C; */
+    color: #FFFFFF;
+    text-align: center;
+    /* 【修正】headerと同様に、外幅が1000pxピッタリになるよう調整 */
+    width: 960px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0; /* 画面中央に配置 */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 0;
+}
+
+
+/* リンクボタンのデザイン */
+.btn-link {
+    color: #4E4A4A;
+    text-decoration: none;
+    text-align: center;        
+    font-weight: bold;
+    font-size: 14px;
+}
